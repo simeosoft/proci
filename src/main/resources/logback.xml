@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>proci.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>    
+    <logger name="org.apache" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="org.apache.derby" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="proci" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="proci.gui.image.ImageCropPanel" level="TRACE" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="org.flywaydb.core" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="com.simeosoft.editor.DecimalEditor" level="TRACE" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>    
+</configuration>
