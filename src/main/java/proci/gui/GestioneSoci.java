@@ -195,7 +195,7 @@ public class GestioneSoci extends javax.swing.JInternalFrame
                 oldImage = new File(app.getAppPath(EDirectories.IMAGES_THUMBS) + ti.getImgFile());
                 oldImage.delete();
             }
-            
+            conn.commit();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(app.getMainFrame(),e,"ERRORE cancellazione socio!",JOptionPane.ERROR_MESSAGE);
             logger.error("ERRORE cancellazione socio!: {}",e);
